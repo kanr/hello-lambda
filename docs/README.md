@@ -10,7 +10,7 @@ following blog post: [A Tour of AWS
 Lambda](https://tailordev.fr/blog/2016/07/08/a-tour-of-aws-lambda/).
 
 
-![](doc/big-picture.png)
+![](big-picture.png)
 
 
 ## Introduction
@@ -37,7 +37,7 @@ and two HTTP methods on API Gateway, and takes care of the permissions and
 credentials. The figure below is an example of what you get in the API Gateway
 dashboard:
 
-![](docs/hello.png)
+![](hello.png)
 
 
 ## Getting started
@@ -71,7 +71,7 @@ If everything is OK, you can build the whole infrastructure:
     $ terraform apply
 
  You can then log in to your aws terminal to the AWS lambda console to get the URL of your lambda function 
- ![](docs/invokeurl.png)
+ ![](invokeurl.png)
 
 You can destroy all the components by running:
 
@@ -93,7 +93,7 @@ module "lambda" {
   source  = "github.com/TailorDev/hello-lambda/lambda"
   name    = "my-lambda"
   handler = "handler"
-  runtime = "python2.7" # could be nodejs | nodejs4.3 | java8 | python2.7
+  runtime = "python3.6" # could be nodejs | nodejs4.3 | java8 | python2.7
   role    = "my-role"
 }
 ```
@@ -107,13 +107,13 @@ functions that can be invoked.
 
 ```hcl
 module "hello_post" {
-  source      = "github.com/TailorDev/hello-lambda/api_method"
+  source      = "github.com/kanr/terraform-lambda-lambda/api_method"
   rest_api_id = "rest-api-id"
   resource_id = "resource-id"
   method      = "POST"
   path        = "resource-path"
   lambda      = "my-lambda"
-  region      = "eu-west-1"
+  region      = "us-west-1"
   account_id  = "account-id"
 }
 ```
@@ -122,4 +122,8 @@ module "hello_post" {
 ## License
 
 This project and its Terraform modules are released under the MIT License. See
-the bundled [LICENSE](LICENSE.md) file for details.
+the bundled [LICENSE](../LICENSE.md) file for details.
+
+## Author Credit
+
+This work is adapted from (TailorDev)[https://github.com/TailorDev/hello-lambda]
