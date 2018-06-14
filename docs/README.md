@@ -1,6 +1,4 @@
-Hello (AWS) Lambda with Terraform
-=================================
-
+# Hello (AWS) Lambda with Terraform
 
 This project is an example of a Python (AWS)
 [Lambda](https://aws.amazon.com/lambda/) exposed with [API
@@ -9,9 +7,7 @@ Gateway](https://aws.amazon.com/api-gateway/), configured with
 following blog post: [A Tour of AWS
 Lambda](https://tailordev.fr/blog/2016/07/08/a-tour-of-aws-lambda/).
 
-
-![](big-picture.png)
-
+![picture](big-picture.png)
 
 ## Introduction
 
@@ -37,20 +33,17 @@ and two HTTP methods on API Gateway, and takes care of the permissions and
 credentials. The figure below is an example of what you get in the API Gateway
 dashboard:
 
-![](hello.png)
-
+![hello](hello.png)
 
 ## Getting started
 
 You must have an [AWS account](http://aws.amazon.com/). Next, you must [install
 Terraform](https://www.terraform.io/intro/getting-started/install.html) first.
 
-
-
 Clone this repository, then run:
-    
-    $ terraform init
-    $ make bootstrap
+
+    terraform init
+    make bootstrap
 
 Create a `terraform.tfvars` file with the content below. This step is optional
 as Terraform will ask you to fill in the different values, but it is convenient.
@@ -64,25 +57,23 @@ aws_region     = "eu-west-1"
 
 You are now ready to use Terraform!
 
-    $ terraform plan
+    terraform plan
 
 If everything is OK, you can build the whole infrastructure:
 
-    $ terraform apply
+    terraform apply
 
  You can then log in to your aws terminal to the AWS lambda console to get the URL of your lambda function 
- ![](invokeurl.png)
+ ![aws_lambda_invoke](invokeurl.png)
 
 You can destroy all the components by running:
 
-    $ terraform destroy
+    terraform destroy
 
 After running terraform destroy there are still residule files in the .teraform directory. They can be removed by typing `rm -rf .terraform`. You can then rebuild from scratch with `terraform init`
 
-
 For more information, please read [the Terraform
 documentation](https://www.terraform.io/docs/index.html).
-
 
 ## Terraform Modules
 
@@ -126,4 +117,4 @@ the bundled [LICENSE](../LICENSE.md) file for details.
 
 ## Author Credit
 
-This work is adapted from (TailorDev)[https://github.com/TailorDev/hello-lambda]
+This work is adapted from [TailorDev](https://github.com/TailorDev/hello-lambda)  
