@@ -3,3 +3,6 @@ terraform.tfvars
 .terraform/
 *.tfstate
 *.tfstate*
+.DS_Store
+.vscode
+*.code-workspace
