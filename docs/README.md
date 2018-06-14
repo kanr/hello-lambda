@@ -1,7 +1,6 @@
 Hello (AWS) Lambda with Terraform
 =================================
 
-[![CircleCI](https://circleci.com/gh/TailorDev/hello-lambda.svg?style=svg&circle-token=e7e667e29ca868d27a239f31aa585d78ebc57827)](https://circleci.com/gh/TailorDev/hello-lambda)
 
 This project is an example of a Python (AWS)
 [Lambda](https://aws.amazon.com/lambda/) exposed with [API
