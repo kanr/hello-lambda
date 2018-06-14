@@ -4,7 +4,7 @@ variable "name" {
 
 variable "runtime" {
   description = "The runtime of the lambda to create"
-  default     = "nodejs"
+  default     = "python3.6"
 }
 
 variable "handler" {
