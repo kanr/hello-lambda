@@ -38,7 +38,7 @@ and two HTTP methods on API Gateway, and takes care of the permissions and
 credentials. The figure below is an example of what you get in the API Gateway
 dashboard:
 
-![](doc/hello.png)
+![](docs/hello.png)
 
 
 ## Getting started
@@ -46,8 +46,11 @@ dashboard:
 You must have an [AWS account](http://aws.amazon.com/). Next, you must [install
 Terraform](https://www.terraform.io/intro/getting-started/install.html) first.
 
-Clone this repository, then run:
 
+
+Clone this repository, then run:
+    
+    $ terraform init
     $ make bootstrap
 
 Create a `terraform.tfvars` file with the content below. This step is optional
@@ -68,9 +71,15 @@ If everything is OK, you can build the whole infrastructure:
 
     $ terraform apply
 
+ You can then log in to your aws terminal to the AWS lambda console to get the URL of your lambda function 
+ ![](docs/invokeurl.png)
+
 You can destroy all the components by running:
 
     $ terraform destroy
+
+After running terraform destroy there are still residule files in the .teraform directory. They can be removed by typing `rm -rf .terraform`. You can then rebuild from scratch with `terraform init`
+
 
 For more information, please read [the Terraform
 documentation](https://www.terraform.io/docs/index.html).
