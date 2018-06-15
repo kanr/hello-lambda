@@ -20,7 +20,7 @@ variable "lambda" {
 }
 
 variable "region" {
-  description = "The AWS region, e.g., eu-west-1"
+  description = "The AWS region, e.g., us-west-1"
 }
 
 variable "account_id" {

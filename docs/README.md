@@ -62,9 +62,12 @@ You are now ready to use Terraform!
 If everything is OK, you can build the whole infrastructure:
 
     terraform apply
+    terraform show | grep -r "invoke_url"
 
- You can then log in to your aws terminal to the AWS lambda console to get the URL of your lambda function 
- ![aws_lambda_invoke](invokeurl.png)
+for GET requests one can simply add the invoke url into the browser to test for a response. From the terinal we can also use curl. 
+
+    curl https://invokeurl.execute-api.aws-region.com/statge/functioname
+    curl --request POST --url https://invokeurl.execute-api.aws-region.com/statge/functioname
 
 You can destroy all the components by running:
 

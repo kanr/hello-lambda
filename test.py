@@ -1,3 +1,10 @@
-import requests
+from flask import Flask
+#from Flask-RESTful import Resource, Api
 
-URL = "https://8s9gwgvzkl.execute-api.us-west-1.amazonaws.com/production/hello"
+app = Flask(__name__)
+#api = Api(app)
+
+@app.route("/")
+def hello():
+    return("hello world")
+    
